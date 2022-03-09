@@ -4,8 +4,12 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -43,6 +47,27 @@ public class TestBase extends AbstractTestNGCucumberTests
 			driver=new EdgeDriver();
 		}
 		
+		else if (browserName.equalsIgnoreCase("headless")) 
+		{
+			DesiredCapabilities caps=new DesiredCapabilities();
+			caps.setJavascriptEnabled(true);
+			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, 
+					System.getProperty("user.dir") + "\\drivers\\phantomjs.exe");
+			String []phantomJsArgs= {"--web-security=no","--ignore-ssl-errors=yes"};
+			caps.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, phantomJsArgs);
+			driver=new PhantomJSDriver(caps);
+		}
+		
+		else if (browserName.equalsIgnoreCase("chrome-headless")) 
+		{
+			String chromePath=System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
+			System.setProperty("webdriver.chrome.driver", chromePath);
+			
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--headless");
+			options.addArguments("--window-size=1920,1080");
+			driver=new ChromeDriver(options);
+		}
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

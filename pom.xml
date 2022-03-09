@@ -55,6 +55,9 @@
 					</configuration>
 				</plugin>
 
+
+
+
 			</plugins>
 		</pluginManagement>
 	</build>
@@ -88,7 +91,7 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.2.1</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+		
 
 		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
@@ -104,6 +107,7 @@
 			<version>1.0.2</version>
 		</dependency>
 
+<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
 		<dependency>
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
@@ -122,31 +126,27 @@
 			<version>1.7.5</version>
 		</dependency>
 
-<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-core -->
-<dependency>
-    <groupId>info.cukes</groupId>
-    <artifactId>cucumber-core</artifactId>
-    <version>1.2.5</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-core -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-core</artifactId>
+			<version>1.2.5</version>
+		</dependency>
 
 
-<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
-<dependency>
-    <groupId>info.cukes</groupId>
-    <artifactId>cucumber-java</artifactId>
-    <version>1.2.5</version>
-</dependency>
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.5</version>
+		</dependency>
 
-<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-testng -->
-<dependency>
-    <groupId>info.cukes</groupId>
-    <artifactId>cucumber-testng</artifactId>
-    <version>1.2.5</version>
-</dependency>
-
-
-
-		
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-testng -->
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>1.2.5</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
 		<dependency>
@@ -155,6 +155,12 @@
 			<version>22.0.0</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.codeborne/phantomjsdriver -->
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>phantomjsdriver</artifactId>
+			<version>1.4.4</version>
+		</dependency>
 
 	</dependencies>
 
